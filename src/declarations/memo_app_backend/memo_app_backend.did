@@ -1,0 +1,21 @@
+type UpdateResponse = 
+ variant {
+   Err: text;
+   Ok: Time;
+ };
+type Time = int;
+type MemoData = 
+ record {
+   body: text;
+   created_at: Time;
+   created_by: principal;
+   id: nat;
+   last_updated: Time;
+   title: text;
+ };
+service : {
+  change_existing_memo: (nat, text, text) -> (UpdateResponse);
+  clearEverything: () -> ();
+  create_new_memo: (text, text) -> (UpdateResponse);
+  get_all_memos: () -> (vec MemoData) query;
+}

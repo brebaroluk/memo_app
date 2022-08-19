@@ -1,0 +1,16 @@
+// Version: 1.0.0
+type MemoData =
+  {
+    body : Text;
+    created_at : Time__1;
+    created_by : Principal;
+    id : Nat;
+    last_updated : Time__1;
+    title : Text
+  };
+type MemoData__1 = MemoData;
+type Time__1 = Int;
+actor {
+  stable var _total_memo_count : Nat;
+  stable var memo_datas_entries : [(Nat, MemoData__1)]
+};

@@ -1,0 +1,35 @@
+{
+  "canisters": {
+    "memo_app_backend": {
+      "main": "src/memo_app_backend/main.mo",
+      "type": "motoko"
+    },
+    "memo_app_frontend": {
+      "dependencies": [
+        "memo_app_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/memo_app_frontend/src/index.html"
+      },
+      "source": [
+        "src/memo_app_frontend/assets",
+        "dist/memo_app_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.0",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}
